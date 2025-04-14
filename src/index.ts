@@ -1,9 +1,13 @@
+import { envs } from "./config/envs";
 import { Server } from "./interface/server";
-
-const main = () => {
-  Server.start();
-};
 
 (async () => {
   main();
 })();
+
+function main() {
+  const server = new Server({
+    port: envs.PORT,
+  });
+  server.start();
+}
