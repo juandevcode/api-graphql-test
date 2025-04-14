@@ -14,7 +14,7 @@ export class Server {
     this.port = port;
   }
 
-  start() {
+  async start() {
     //* Middlewares
     this.app.use(express.json());
 
