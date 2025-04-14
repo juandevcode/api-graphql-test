@@ -1,22 +1,22 @@
 version: "3.9"
 
 services:
-  node-graphql-app-technical-test:
-    container_name: node-graphql-app-technical-test
+  node-rick-morty-graphql-technical-test:
+    container_name: node-rick-morty-graphql-technical-test
     build: .
-    image: node-graphql-app-technical-test
+    image: node-rick-morty-graphql-technical-test
     restart: always
     ports:
       - 3000:3000
 
   db-postgres-graphql-app-technical-test:
-    container_name: db-postgres-graphql-app-technical-test
+    container_name: db-postgres-rick-morty-graphql-technical-test
     image: postgres:latest
     restart: always
     ports:
       - 5433:5432
     environment:
-      - POSTGRES_DB=graphql-app-technical-test
+      - POSTGRES_DB=graphqlrickmorty
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123456
     volumes:
