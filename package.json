@@ -21,10 +21,8 @@
   "homepage": "https://github.com/juandevcode/api-graphql-test#readme",
   "devDependencies": {
     "@types/node": "^22.14.1",
+    "rimraf": "^6.0.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
-  },
-  "dependencies": {
-    "rimraf": "^6.0.1"
   }
 }

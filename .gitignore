@@ -1,3 +1,6 @@
+# data DB
+postgres_db_data
+
 # Logs
 logs
 *.log
