@@ -1,2 +1,1 @@
-# api-graphql-test
-API GraphQL - Technical Test Blossom
+# API GraphQL - Technical Test Blossom

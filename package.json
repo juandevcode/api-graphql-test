@@ -1,0 +1,30 @@
+{
+  "name": "api-graphql-test",
+  "version": "1.0.0",
+  "description": "API GraphQL -Technical Test Blossom",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsnd --respawn --clear src/index.ts",
+    "build": "npx rimraf ./dist && tsc",
+    "start": "npm run build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juandevcode/api-graphql-test.git"
+  },
+  "author": "Juan David Arias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juandevcode/api-graphql-test/issues"
+  },
+  "homepage": "https://github.com/juandevcode/api-graphql-test#readme",
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "rimraf": "^6.0.1"
+  }
+}
