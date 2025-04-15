@@ -1,6 +1,6 @@
 # API GraphQL - Technical Test Blossom
 
-This project is an API using Express and GraphQL that allows searching for Rick and
+This project is an API using Express (Apollo/server) and GraphQL that allows searching for Rick and
 Morty characters.
 
 ## Stack
@@ -33,8 +33,6 @@ src/
 │   └── server.js
 │
 ├── shared/
-│   └── utils/
-│   │   └── apiClient.js
 │   └── config.js
 │
 └── index.js
