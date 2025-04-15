@@ -1,39 +1,11 @@
-import { Character } from "../../../infrastructure/database/models";
+import { CharacterService } from "../../../application/services/character.service";
 
-const characters = [
-  {
-    id: 1,
-    name: "Rick Sanchez",
-    status: "Alive",
-    species: "Human",
-    gender: "Male",
-  },
-  {
-    id: 1,
-    name: "Rick Sanchez",
-    status: "Alive",
-    species: "Human",
-    gender: "Male",
-  },
-  {
-    id: 1,
-    name: "Rick Sanchez",
-    status: "Alive",
-    species: "Human",
-    gender: "Male",
-  },
-];
+const characterService = new CharacterService();
 
-const characterResolvers = {
+export const characterResolvers = {
   Query: {
-    characters: async () => {
-      try {
-        return await Character.findAll();
-      } catch (error) {
-        throw new Error(`Error searching characters`);
-      }
+    characters: async (_: any, args: any) => {
+      return await characterService.getFilteredCharacters(args);
     },
   },
 };
-
-export { characterResolvers };

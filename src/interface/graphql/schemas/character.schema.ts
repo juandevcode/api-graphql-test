@@ -25,6 +25,6 @@ export const typeDefs = `
   }
 
   type Query {
-    characters: [Character!]
+    characters(status: String, species: String, gender: String, name: String, origin: String): [Character!]
   }
 `;
