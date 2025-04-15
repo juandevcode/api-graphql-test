@@ -107,7 +107,9 @@ docker-compose up --build
 
 ## API Documentation (GraphQL Server)
 
-### characters:
+### characters: Get Characters
+
+Local URL: http://localhost:4000/graphql
 
 ```
 query {
