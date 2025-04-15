@@ -1,7 +1,8 @@
 import { Sequelize } from "sequelize";
+import { envs } from "../../shared/config/envs";
 
 export const sequelize = new Sequelize("graphqlrickmorty", "postgres", "123456", {
-  host: "localhost",
+  host: envs.NODE_ENV === "test" ? "localhost" : envs.POSTGRES_HOST,
   dialect: "postgres",
 });
 

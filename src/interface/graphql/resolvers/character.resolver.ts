@@ -1,4 +1,4 @@
-import { Character } from "../../../domain/entities/character.entity";
+import { Character } from "../../../infrastructure/database/models";
 
 const characters = [
   {
@@ -26,14 +26,13 @@ const characters = [
 
 const characterResolvers = {
   Query: {
-    characters: () => characters,
-    /*GetPersons: async () => {
+    characters: async () => {
       try {
         return await Character.findAll();
       } catch (error) {
         throw new Error(`Error searching characters`);
       }
-    },*/
+    },
   },
 };
 

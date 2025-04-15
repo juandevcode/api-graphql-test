@@ -1,38 +1,40 @@
-version: "3.9"
-
 services:
+  db-postgres-graphql-app-technical-test:
+    container_name: db-postgres-rick-morty-graphql-technical-test
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_db_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
   node-rick-morty-graphql-technical-test:
     container_name: node-rick-morty-graphql-technical-test
     build: .
-    command: sh -c "npm install && npm run dev"
-    volumes:
-      - .:/app
     restart: always
     ports:
       - 4000:4000
     environment:
+      NODE_ENV: development
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     depends_on:
       - db-postgres-graphql-app-technical-test
-    networks:
-      - app-network
-
-  db-postgres-graphql-app-technical-test:
-    container_name: db-postgres-rick-morty-graphql-technical-test
-    image: postgres:latest
-    restart: always
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - ./postgres_db_data:/var/lib/postgresql/data
+      - .:/app
     networks:
       - app-network
+    command: ["npm", "run", "migrate-and-dev"]
+
+volumes:
+  postgres_db_data:
 
 networks:
   app-network:

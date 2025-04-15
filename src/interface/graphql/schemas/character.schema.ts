@@ -20,6 +20,8 @@ export const typeDefs = `
     species: String
     gender: CharacterStatus
     status: CharacterStatus
+    image: String
+    origin: String
   }
 
   type Query {
