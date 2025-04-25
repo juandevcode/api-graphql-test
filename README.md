@@ -1,4 +1,4 @@
-# API GraphQL - Technical Test Blossom
+# API GraphQL - Training
 
 This project exposes a GraphQL server that allows you to query information about characters from the Rick and Morty universe stored in a PostgreSQL database. The data is automatically updated from the Rick and Morty public API every 12 hours.
 
